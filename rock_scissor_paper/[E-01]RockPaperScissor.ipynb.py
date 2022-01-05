@@ -2,11 +2,12 @@ from PIL import Image
 import glob
 import numpy as np
 import os
+ 
 
-
-def load_data(img_path, number_of_data=314):  
+def load_data(img_path, number_of_data):  
     # 가위 : 0, 바위 : 1, 보 : 2
     # 내가 만든 train 이미지는 총 314개이다.
+    # 인수로 지정
     
     img_size=28
     color=3
@@ -28,10 +29,11 @@ def load_data(img_path, number_of_data=314):
 
     idx=0
     
-    for file in glob.iglob(img_path+'/img/train/scissor/*.jpg'):    
+    for file in glob.iglob(img_path+'/scissor/*.jpg'):    
         # glob.iglob() :실제로 동시에 저장하지 않고 glob()과 같은 값을 산출하는 이터레이터(반복가능한 객체)를 반환
         # glob는 해당 디렉토리의 파일명을 리스트 형식으로 반환한다.
         # * 는 모든 파일을 지정
+        # (img_path -> 전체 폴더이름) + 나머지 경로
         
         img = np.array(Image.open(file),dtype=np.int32)
         imgs[idx,:,:,:]=img    # 데이터 영역에 이미지 행렬을 복사
@@ -39,14 +41,14 @@ def load_data(img_path, number_of_data=314):
         idx=idx+1
     # 가위 전체 파일을 for문으로 반복해서 열어서, 0 으로 분류    
 
-    for file in glob.iglob(img_path+'/img/train/rock/*.jpg'):
+    for file in glob.iglob(img_path+'/rock/*.jpg'):
         img = np.array(Image.open(file),dtype=np.int32)
         imgs[idx,:,:,:]=img    # 데이터 영역에 이미지 행렬을 복사
         labels[idx]=1   # 바위 : 1
         idx=idx+1  
     # 바위 전체 파일을 for문으로 반복해서 열어서, 0 으로 분류 
     
-    for file in glob.iglob(img_path+'/img/train/paper/*.jpg'):
+    for file in glob.iglob(img_path+'/paper/*.jpg'):
         img = np.array(Image.open(file),dtype=np.int32)
         imgs[idx,:,:,:]=img    # 데이터 영역에 이미지 행렬을 복사
         labels[idx]=2   # 보 : 2
@@ -62,7 +64,7 @@ def load_data(img_path, number_of_data=314):
 
 image_dir_path = '/img/train' # train 데이터 폴더 전체 오픈
 
-(x_train, y_train)=load_data(image_dir_path)
+(x_train, y_train)=load_data(image_dir_path, 314)
 # 위에서 작성한 함수 load_data 함수에 넣어서 x_train은 imgs, y_train은 labels로 반환된다.
 # imgs는 (314, 28, 28, 3)으로 reshape된 img 배열이다.
 # labels -> 가위 : 0, 바위 : 1, 보 : 2
@@ -128,44 +130,8 @@ model.fit(x_train_norm, y_train, epochs=30, validation_split=0.3)
 
 # 슬기님이 주신 테스트 데이터
 
-import numpy as np
-
-def load_data(img_path, number_of_data=334):  
-    # 가위 : 0, 바위 : 1, 보 : 2
-    # 슬기님의 사진은 334장
-    
-    img_size=28
-    color=3
-    
-    imgs=np.zeros(number_of_data*img_size*img_size*color,dtype=np.int32).reshape(number_of_data,img_size,img_size,color)
-    labels=np.zeros(number_of_data,dtype=np.int32)
-
-    idx=0
-    
-    for file in glob.iglob(img_path+'/img/test/scissor/*.jpg'):
-        img = np.array(Image.open(file),dtype=np.int32)
-        imgs[idx,:,:,:]=img    
-        labels[idx]=0   # 가위 : 0
-        idx=idx+1
-
-    for file in glob.iglob(img_path+'/img/test/rock/*.jpg'):
-        img = np.array(Image.open(file),dtype=np.int32)
-        imgs[idx,:,:,:]=img    
-        labels[idx]=1   # 바위 : 1
-        idx=idx+1  
-    
-    for file in glob.iglob(img_path+'/img/test/paper/*.jpg'):
-        img = np.array(Image.open(file),dtype=np.int32)
-        imgs[idx,:,:,:]=img    
-        labels[idx]=2   # 보 : 2
-        idx=idx+1
-        
-    print("학습데이터(x_test)의 이미지 개수는", idx,"입니다.")
-    
-    return imgs, labels
-
-image_dir_path = '/img/test'
-(x_test, y_test)=load_data(image_dir_path)
+image_test_dir_path = '/img/test'
+(x_test, y_test)=load_data(image_dir_path, 334)
 x_test_norm = x_test/255.0  
 
 print("x_test shape: {}".format(x_test.shape))
