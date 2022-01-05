@@ -62,7 +62,7 @@ def load_data(img_path, number_of_data):
 
 
 
-image_dir_path = '/img/train' # train 데이터 폴더 전체 오픈
+image_dir_path = './img/train' # train 데이터 폴더 전체 오픈
 
 (x_train, y_train)=load_data(image_dir_path, 314)
 # 위에서 작성한 함수 load_data 함수에 넣어서 x_train은 imgs, y_train은 labels로 반환된다.
@@ -99,7 +99,7 @@ import numpy as np
 # 이 값일 때, 평가 정확도가 가장 높게 나왔음
 n_channel_1=64
 n_channel_2=128
-n_dense=32
+n_dense=16
 
 model=keras.models.Sequential()
 model.add(keras.layers.Conv2D(n_channel_1, (3,3), activation='relu', input_shape=(28,28,3)))
@@ -130,8 +130,8 @@ model.fit(x_train_norm, y_train, epochs=30, validation_split=0.3)
 
 # 슬기님이 주신 테스트 데이터
 
-image_test_dir_path = '/img/test'
-(x_test, y_test)=load_data(image_dir_path, 334)
+image_test_dir_path = './img/test'
+(x_test, y_test)=load_data(image_test_dir_path, 334)
 x_test_norm = x_test/255.0  
 
 print("x_test shape: {}".format(x_test.shape))
