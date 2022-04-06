@@ -2,7 +2,7 @@
 
 ||링크 클릭❣|
 |:---:|:---:|
-|💜개인 공부용 노션 페이지💜|[노션 정리](https://lovely-sand-5da.notion.site/431306285c1b4089988411fdff939a65)|
+|💜개인 공부용 노션 페이지💜|[공부한 내용 정리](https://www.notion-pinotnoir056.com/cf6c966c-0625-46d5-9b83-e3ec13edf1a8)|
 |💌EXPLORATION 07 뷰어|[[E-07] 인물 모드 문제점 찾기](https://nbviewer.org/github/Seona056/AIFFEL_Daegu/blob/main/%5BE-07%5D%20%EC%9D%B8%EB%AC%BC%20%EB%AA%A8%EB%93%9C%20%EB%AC%B8%EC%A0%9C%EC%A0%90%20%EC%B0%BE%EA%B8%B0.ipynb)|
 |💌EXPLORATION 10 뷰어|[[E-10] CIFAR-10 이미지 생성하기](https://nbviewer.org/github/Seona056/AIFFEL_Daegu/blob/main/%5BE-10%5D%20CIFAR-10%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.ipynb)|
 |💌EXPLORATION 17 뷰어|[[E-17] Segmentation map으로 도로 이미지 만들기](https://nbviewer.org/github/Seona056/AIFFEL_Daegu/blob/main/%5BE-17%5D%20Segmentation%20map%EC%9C%BC%EB%A1%9C%20%EB%8F%84%EB%A1%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0.ipynb)|
