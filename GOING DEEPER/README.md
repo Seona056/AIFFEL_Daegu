@@ -13,7 +13,7 @@
 |6. 나를 찾아줘 - Class Activation Map 만들기|1️⃣ CAM을 얻기 위한 기본모델의 구성과 학습이 정상 진행되었는가?<br>2️⃣ 분류근거를 설명 가능한 Class activation map을 얻을 수 있는가?<br>3️⃣ 인식결과의 시각화 및 성능 분석을 적절히 수행하였는가?|⭐<br>⭐<br>⭐|
 |8. GO/STOP! - Object Detection 시스템 만들기|1️⃣ KITTI 데이터셋에 대한 분석이 체계적으로 진행되었다.<br>2️⃣ RetinaNet 학습이 정상적으로 진행되어 object detection 결과의 시각화까지 진행되었다.<br>3️⃣ 자율주행 Object Detection 테스트시스템 적용결과 만족스러운 정확도 성능을 달성하였다.|⭐<br>⭐<br>⭐|
 |10. 도로 영역을 찾자! - 세그멘테이션 모델 만들기|1️⃣ U-Net을 통한 세그멘테이션 작업이 정상적으로 진행되었는가?<br>2️⃣ U-Net++ 모델이 성공적으로 구현되었는가?<br>3️⃣ U-Net과 U-Net++ 두 모델의 성능이 정량적/정성적으로 잘 비교되었는가?|⭐<br>⭐<br>⭐|
-||1️⃣<br>2️⃣<br>3️⃣|⭐<br>⭐<br>❌|
+|12. 직접 만들어보는 OCR|1️⃣ Text recognition을 위해 특화된 데이터셋 구성이 체계적으로 진행되었다.<br>2️⃣ CRNN 기반의 recognition 모델의 학습이 정상적으로 진행되었다.<br>3️⃣ keras-ocr detector와 CRNN recognizer를 엮어 원본 이미지 입력으로부터 text가 출력되는 OCR이 End-to-End로 구성되었다.|❌<br>❌<br>❌|
 |14. 멀리 있는 사람도 스티커를 붙여주자|1️⃣ multiface detection을 위한 widerface 데이터셋의 전처리가 적절히 진행되었다.<br>2️⃣ SSD 모델이 안정적으로 학습되어 multiface detection이 가능해졌다.<br>3️⃣ 이미지 속 다수의 얼굴에 스티커가 적용되었다.|⭐<br>⭐<br>❌|
 |16. 행동 스티커 만들기|1️⃣ tfrecord를 활용한 데이터셋 구성과 전처리를 통해 프로젝트 베이스라인 구성을 확인하였다.<br>2️⃣ simplebaseline 모델을 정상적으로 구현하였다.<br>3️⃣ Hourglass 모델과 simplebaseline 모델을 비교분석한 결과를 체계적으로 정리하였다.|⭐<br>❌<br>❌|
 
